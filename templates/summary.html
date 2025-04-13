@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <h1>Expense Summary</h1>
+    <ul>
+        {% for e in expenses %}
+            <li>{{ e.name }} - ₹{{ e.amount }} ({{ e.category }})</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Total Spent: ₹{{ total }}</h3>
+    <h3>Remaining Budget: ₹{{ remaining }}</h3>
+    <h3>Daily Budget: ₹{{ daily|round(2) }}</h3>
+
+    <a href="/">Add More Expenses</a>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
